@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check out this image and link</title>
+</head>
+<body>
+<p id="description">Check out this image and link:</p>
+<a id="link" href="#">
+    <img id="image" src="" alt="Image Preview" style="width:300px;">
+</a>
+<p>
+    <a id="linkText" href="#"></a>
+</p>
+
+<script>
+    // Function to get query parameters
+    function getQueryParams() {
+      const params = {};
+      window.location.search.substring(1).split('&').forEach(pair => {
+        const [key, value] = pair.split('=');
+        params[decodeURIComponent(key)] = decodeURIComponent(value);
+      });
+      return params;
+    }
+
+    // Update content based on query parameters
+    const params = getQueryParams();
+    if (params.link && params.imageUrl) {
+      document.getElementById('link').href = params.link;
+      document.getElementById('image').src = params.imageUrl;
+      document.getElementById('linkText').href = params.link;
+      document.getElementById('linkText').textContent = params.link;
+    }
+  </script>
+</body>
+</html>
