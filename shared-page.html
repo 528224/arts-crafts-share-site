@@ -5,25 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Check out this product">
-    <meta property="og:description" content="Explore this product on Art and Crafts">
-    <meta property="og:image" content="" id="og-image">
-    <meta property="og:url" content="https://artandcrafts-82d0b.firebaseapp.com?type=productdetails&id=c0539b40-7a6e-11ee-808a-938279f203e0&title=219_(FXO)">
+    <meta property="og:title" content="Product Name">
+    <meta property="og:description" content="Product Description">
+    <meta property="og:image" content="https://example.com/product-image.jpg">
+    <meta property="og:url" content="https://your-domain.com/product-details?productId=yourProductId">
     <meta property="og:type" content="website">
 
-    <title>Check out this product</title>
+    <title>Product Name</title>
 </head>
 <body>
-<p>Click on the link below to explore this product:</p>
-<a href="https://artandcrafts-82d0b.firebaseapp.com?type=productdetails&id=c0539b40-7a6e-11ee-808a-938279f203e0&title=219_(FXO)">
-    <img src="" alt="Product Image" id="product-image" style="width: 300px;">
-</a>
-
-<script>
-        // JavaScript to set dynamic og:image meta tag
-        var imageUrl = decodeURIComponent(window.location.search.match(/imageUrl=([^&]*)/)[1]);
-        document.getElementById('og-image').setAttribute('content', imageUrl);
-        document.getElementById('product-image').setAttribute('src', imageUrl);
-    </script>
+<p>Product Description</p>
+<img src="https://example.com/product-image.jpg" alt="Product Image" style="width: 300px;">
 </body>
 </html>
