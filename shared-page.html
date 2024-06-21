@@ -1,36 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Check out this image and link</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Check out this product">
+    <meta property="og:description" content="Explore this product on Art and Crafts">
+    <meta property="og:image" content="" id="og-image">
+    <meta property="og:url" content="https://artandcrafts-82d0b.firebaseapp.com?type=productdetails&id=c0539b40-7a6e-11ee-808a-938279f203e0&title=219_(FXO)">
+    <meta property="og:type" content="website">
+
+    <title>Check out this product</title>
 </head>
 <body>
-<p id="description">Check out this image and link:</p>
-<a id="link" href="#">
-    <img id="image" src="" alt="Image Preview" style="width:300px;">
+<p>Click on the link below to explore this product:</p>
+<a href="https://artandcrafts-82d0b.firebaseapp.com?type=productdetails&id=c0539b40-7a6e-11ee-808a-938279f203e0&title=219_(FXO)">
+    <img src="" alt="Product Image" id="product-image" style="width: 300px;">
 </a>
-<p>
-    <a id="linkText" href="#"></a>
-</p>
 
 <script>
-    // Function to get query parameters
-    function getQueryParams() {
-      const params = {};
-      window.location.search.substring(1).split('&').forEach(pair => {
-        const [key, value] = pair.split('=');
-        params[decodeURIComponent(key)] = decodeURIComponent(value);
-      });
-      return params;
-    }
-
-    // Update content based on query parameters
-    const params = getQueryParams();
-    if (params.link && params.imageUrl) {
-      document.getElementById('link').href = params.link;
-      document.getElementById('image').src = params.imageUrl;
-      document.getElementById('linkText').href = params.link;
-      document.getElementById('linkText').textContent = params.link;
-    }
-  </script>
+        // JavaScript to set dynamic og:image meta tag
+        var imageUrl = decodeURIComponent(window.location.search.match(/imageUrl=([^&]*)/)[1]);
+        document.getElementById('og-image').setAttribute('content', imageUrl);
+        document.getElementById('product-image').setAttribute('src', imageUrl);
+    </script>
 </body>
 </html>
